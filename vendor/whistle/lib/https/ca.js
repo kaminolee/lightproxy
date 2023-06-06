@@ -287,7 +287,7 @@ function getRandom() {
 
 function createCACert() {
   var keys = pki.rsa.generateKeyPair(requiredVersion ? 2048 : 1024);
-  var cert = createCert(keys.publicKey);
+  var cert = createCert(keys.publicKey, '01', true);
   var now = Date.now() + getRandom();
   var attrs = [ {
     name : 'commonName',
